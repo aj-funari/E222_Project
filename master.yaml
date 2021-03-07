@@ -1,0 +1,10 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: e222_project
+  description: ''
+paths: {}
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/ajfunari/e222_project/1.0
