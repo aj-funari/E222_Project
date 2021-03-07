@@ -3,7 +3,17 @@ info:
   version: '1.0'
   title: e222_project
   description: ''
-paths: {}
+paths:
+ /pred/{arg}:
+    post:
+      tags:
+        - PRED
+      operationId: HF_defaultservice.ipynb.my_prediction
+      description: Returns prediction of ML application
+      parameters:
+        - in: path
+          name: arg
+          required: true
 servers:
   # Added by API Auto Mocking Plugin
   - description: SwaggerHub API Auto Mocking
