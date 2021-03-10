@@ -5,7 +5,7 @@ info:
   description: ''
 paths:
  /pred/{arg}:
-    post:
+    get:
       tags:
         - PRED
       operationId: HF_defaultservice.ipynb.my_prediction
@@ -14,7 +14,56 @@ paths:
         - in: path
           name: arg
           required: true
+	  schema:
+             type: array
+             items:
+               type: number
+             minItems: 1
+      responses:
+        '200':
+          description: 'death prediction'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PRED'
+
+ /score/test_size:
+    get:
+      tags:
+        - SCORE
+      operationId: HF_defaultservice.ipynb.score
+      description: Returns score of model
+      parameters:
+        - in: path
+          name: test_size
+          required: true
+	  schema:
+             type: number
+             minItems: 1
+      responses:
+        '200':
+          description: 'score'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SCORE'
 servers:
   # Added by API Auto Mocking Plugin
   - description: SwaggerHub API Auto Mocking
     url: https://virtserver.swaggerhub.com/ajfunari/e222_project/1.0
+components:
+  schemas:
+    PRED:
+      type: object
+      required:
+        - model
+      properties:
+        model:
+          type: string
+    SCORE:
+      type: object
+      required:
+        - model
+      properties:
+        model:
+          type: string
