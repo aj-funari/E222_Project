@@ -8,8 +8,8 @@ paths:
     get:
       tags:
         - PRED
-      operationId: HF_defaultservice.ipynb.my_prediction
-      description: Returns prediction of ML application
+      operationId: my_python_dir.HF_defaultservice.ipynb.my_prediction
+      description: returns prediction of ML application
       parameters:
         - in: path
           name: arg
@@ -31,7 +31,7 @@ paths:
     get:
       tags:
         - SCORE
-      operationId: HF_defaultservice.ipynb.score
+      operationId: my_python_dir.HF_defaultservice.ipynb.score
       description: Returns score of model
       parameters:
         - in: path
