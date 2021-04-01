@@ -19,11 +19,3 @@ def my_prediction(arg):
     pred = json.dumps(pred)
     return pred
 
-def score(arg):
-    x_train, x_test, y_train, y_test = train_test_split(X_new, Y_new, test_size=arg, random_state=0)
-    my_model = pipe.fit(x_train, y_train)
-    score = my_mdl.score(x_test,y_test)
-    score = score.tolist()
-    score = json.dumps(score)
-    return score
-
